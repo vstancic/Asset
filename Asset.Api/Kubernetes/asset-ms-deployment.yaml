@@ -1,0 +1,21 @@
+﻿apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: asset-ms-deployment
+  labels:
+    app: asset-ms
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: asset-ms
+  template:
+    metadata:
+      labels:
+        app: asset-ms
+    spec:
+      containers:
+        - name: asset-ms
+          image: veliborstancic/asset-ms:v1.0.0
+          ports:
+            - containerPort: 80

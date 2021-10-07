@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: asset-ms-db-service-no-selector
+spec:
+  ports:
+    - port: 49172
+      targetPort: 49172
+---
+apiVersion: v1
+kind: Endpoints
+metadata:
+  name: asset-ms-db-service-no-selector
+subsets:
+  - addresses:
+      - ip: 172.18.144.1
+    ports:
+      - port: 49172
+        name: sql-server

@@ -1,0 +1,13 @@
+﻿apiVersion: v1
+kind: Service
+metadata:
+  name: asset-ms-service-load-balancer
+spec:
+  selector:
+    app: asset-ms
+  type: LoadBalancer
+  ports:
+    - protocol: TCP
+      port: 5006
+      targetPort: 80
+      nodePort: 30000

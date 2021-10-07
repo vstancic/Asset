@@ -5,7 +5,11 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build
 WORKDIR /src
+COPY "*.sln" .
 COPY ["Asset.Api/Asset.Api.csproj", "Asset.Api/"]
+COPY ["Asset.Domain/Asset.Domain.csproj", "Asset.Domain/"]
+COPY ["Asset.Infrastructure/Asset.Infrastructure.csproj", "Asset.Infrastructure/"]
+COPY ["Asset.Test/Asset.Test.csproj", "Asset.Test/"]
 RUN dotnet restore "Asset.Api/Asset.Api.csproj"
 COPY . .
 WORKDIR "/src/Asset.Api"
