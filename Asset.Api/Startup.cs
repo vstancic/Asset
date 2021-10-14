@@ -45,6 +45,7 @@ namespace Asset.Api
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Asset.Api v1"));
             }
 
+            var r = env.EnvironmentName;
             app.UseHttpsRedirection();
 
             app.UseRouting();
