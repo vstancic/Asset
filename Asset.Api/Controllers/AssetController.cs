@@ -22,6 +22,7 @@ namespace Asset.Api.Controllers
         public string Get()
         {
             //var asset = new Domain.Asset();
+            var s = "connection string";
             return _configuration.GetConnectionString("SqlConnectionString");
         }
         
