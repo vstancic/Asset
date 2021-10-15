@@ -22,6 +22,7 @@ namespace Asset.Api.Controllers
         public string Get()
         {
             var asset = new Domain.Asset();
+            string testString = "just for testing";
             return _configuration.GetConnectionString("SqlConnectionString");
         }
         
