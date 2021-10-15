@@ -21,7 +21,7 @@ namespace Asset.Api.Controllers
         [HttpGet("message")]
         public string Get()
         {
-            //var asset = new Domain.Asset();
+            var asset = new Domain.Asset();
             return _configuration.GetConnectionString("SqlConnectionString");
         }
         
