@@ -24,6 +24,7 @@ namespace Asset.Api.Controllers
             var asset = new Domain.Asset();
             string testString = "just for testing";
             string testString1 = "just for testing";
+            string testString2 = "just for testing";
             return _configuration.GetConnectionString("SqlConnectionString");
         }
         
