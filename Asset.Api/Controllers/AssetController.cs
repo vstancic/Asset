@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using Asset.Infrastructure;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 
 namespace Asset.Api.Controllers
 {
@@ -10,16 +11,18 @@ namespace Asset.Api.Controllers
     {
 
         private readonly AssetContext _context;
-        public AssetController(AssetContext context)
+        private readonly IConfiguration _configuration;
+        public AssetController(AssetContext context, IConfiguration configuration)
         {
             _context = context;
+            _configuration = configuration;
         }
 
         [HttpGet("message")]
         public string Get()
         {
-            var asset = new Domain.Asset();
-            return asset.MessageFromAsset();
+            //var asset = new Domain.Asset();
+            return _configuration.GetConnectionString("SqlConnectionString");
         }
         
         [HttpGet]
